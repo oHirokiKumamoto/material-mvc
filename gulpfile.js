@@ -1,6 +1,7 @@
 var gulp    = require('gulp');
 var webpack = require('gulp-webpack');
-var less    = require('gulp-less');
+var cordova = require('gulp-cordova');
+
 var config  = {
   entry: './src/main.js',
   output: {
@@ -18,14 +19,43 @@ var config  = {
   }
 };
 
-gulp.task('build', function () {
+var mvcPluginUrl = 'http://gitbucket.tok.access-company.com:8080/git/hiroki.kumamoto/cordova-plugin-mvc.git';
+
+gulp.task('cordova:prepare', function() {
+  gulp.src('.').pipe(
+    cordova([
+      ['platforms', 'add', 'android', 'ios'],
+      ['plugin', 'add', 'cordova-plugin-crosswalk-webview',
+                        'cordova-plugin-device',
+                        'cordova-plugin-whitelist',
+                        mvcPluginUrl]
+    ], { verbose: true}));
+});
+
+gulp.task('cordova:build', function() {
+  gulp.src('.').pipe(
+    cordova([
+      ['build', 'ios', 'android'],
+    ], { verbose: true}));
+});
+
+gulp.task('cordova:run_android', function() {
+  gulp.src('.').pipe(
+    cordova([
+      ['run', 'android'],
+    ], { verbose: true}));
+});
+
+gulp.task('cordova:run_ios', function() {
+  gulp.src('.').pipe(
+    cordova([
+      ['run', 'ios'],
+    ], { verbose: true}));
+});
+
+gulp.task('webpack', function () {
     return gulp.src(config.entry)
         .pipe(webpack(config))
         .pipe(gulp.dest("./www/js"));
 });
 
-gulp.task('less', function() {
-  return gulp.src("./less/*.less")
-    .pipe(less())
-    .pipe(gulp.dest('./www/css'));
-});
