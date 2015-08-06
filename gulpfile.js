@@ -26,8 +26,6 @@ gulp.task('cordova:prepare', function() {
     cordova([
       ['platforms', 'add', 'android', 'ios'],
       ['plugin', 'add', 'cordova-plugin-crosswalk-webview',
-                        'cordova-plugin-device',
-                        'cordova-plugin-whitelist',
                         mvcPluginUrl]
     ], { verbose: true}));
 });
