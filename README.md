@@ -1,7 +1,6 @@
 # Material MVC
 
-This is the mobile application that allow us to
-check MVC(mission, vision, core values) of ACCESS, CO LTD anytime, anywhere
+This is the mobile application that allow us to check MVC(mission, vision, core values) of ACCESS, CO LTD anytime, anywhere
 
 This application is created with Apache cordova and material-ui
 
