@@ -5,6 +5,8 @@ check MVC(mission, vision, core values) of ACCESS, CO LTD anytime, anywhere
 
 This application is created with Apache cordova and material-ui
 
+![screenshot](./material-mvc.png)
+
 ## How to build
 
 ### Install dev tools
