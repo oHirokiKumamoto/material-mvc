@@ -24,7 +24,7 @@ var mvcPluginUrl = 'https://github.com/aHirokiKumamoto/cordova-plugin-mvc.git';
 gulp.task('cordova:prepare', function() {
   gulp.src('.').pipe(
     cordova([
-      ['platforms', 'add', 'android', 'ios'],
+      ['platforms', 'add', 'android', 'ios', 'browser'],
       ['plugin', 'add', 'cordova-plugin-crosswalk-webview',
                         mvcPluginUrl]
     ], { verbose: true}));
@@ -33,8 +33,8 @@ gulp.task('cordova:prepare', function() {
 gulp.task('cordova:clean', function() {
   gulp.src('.').pipe(
     cordova([
-      ['platforms', 'remove', 'android', 'ios'],
-      ['plugin', 'remove', 'cordova-plugin-crosswalk-webview']
+      ['platforms', 'remove', 'android', 'ios', 'browser'],
+      ['plugin', 'remove', 'cordova-plugin-crosswalk-webview', 'cordova-plugin-mvc']
     ], { verbose: true}));
 });
 
