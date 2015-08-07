@@ -19,7 +19,7 @@ var config  = {
   }
 };
 
-var mvcPluginUrl = 'http://gitbucket.tok.access-company.com:8080/git/hiroki.kumamoto/cordova-plugin-mvc.git';
+var mvcPluginUrl = 'https://github.com/aHirokiKumamoto/cordova-plugin-mvc.git';
 
 gulp.task('cordova:prepare', function() {
   gulp.src('.').pipe(
