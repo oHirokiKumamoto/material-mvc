@@ -30,6 +30,14 @@ gulp.task('cordova:prepare', function() {
     ], { verbose: true}));
 });
 
+gulp.task('cordova:clean', function() {
+  gulp.src('.').pipe(
+    cordova([
+      ['platforms', 'remove', 'android', 'ios'],
+      ['plugin', 'remove', 'cordova-plugin-crosswalk-webview']
+    ], { verbose: true}));
+});
+
 gulp.task('cordova:build', function() {
   gulp.src('.').pipe(
     cordova([
