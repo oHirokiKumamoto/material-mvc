@@ -38,6 +38,20 @@ gulp.task('cordova:clean', function() {
     ], { verbose: true}));
 });
 
+gulp.task('cordova:build_ios', function() {
+  gulp.src('.').pipe(
+    cordova([
+      ['build', 'ios'],
+    ], { verbose: true}));
+});
+
+gulp.task('cordova:build_android', function() {
+  gulp.src('.').pipe(
+    cordova([
+      ['build', 'android'],
+    ], { verbose: true}));
+});
+
 gulp.task('cordova:build', function() {
   gulp.src('.').pipe(
     cordova([

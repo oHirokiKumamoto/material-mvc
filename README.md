@@ -30,7 +30,8 @@ $ node_modules/gulp/bin/gulp.js cordova:prepare
 
 ```
 $ node_modules/gulp/bin/gulp.js webpack
-$ node_modules/gulp/bin/gulp.js cordova:build
+$ node_modules/gulp/bin/gulp.js cordova:build_ios
+$ node_modules/gulp/bin/gulp.js cordova:build_android
 ```
 
 ### Run android or ios
